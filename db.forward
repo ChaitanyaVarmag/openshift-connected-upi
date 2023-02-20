@@ -1,0 +1,28 @@
+$TTL    604800
+@       IN      SOA     bastion.example.com. admin.example.com. (
+                  1     ; Serial
+             604800     ; Refresh
+              86400     ; Retry
+            2419200     ; Expire
+             604800     ; Negative Cache TTL
+)
+
+; name servers - NS records
+    IN      NS      bastion
+
+; name servers - A records
+bastion.example.com.          IN      A       192.168.31.90
+
+; OpenShift Container Platform Cluster - A records
+bootstrap.ocp.example.com.        IN      A      192.168.31.82
+master1.ocp.example.com.        IN      A      192.168.31.83
+master2.ocp.example.com.         IN      A      192.168.31.84
+master3.ocp.example.com.         IN      A      192.168.31.85
+worker1.ocp.example.com.        IN      A       192.168.31.86
+worker2.ocp.example.com.        IN      A       192.168.31.87
+worker3.ocp.example.com.        IN      A       192.168.31.88
+
+; OpenShift internal cluster IPs - A records
+api.ocp.example.com.    IN    A    192.168.31.90
+api-int.ocp.example.com.    IN    A    192.168.31.90
+*.apps.ocp.example.com.    IN    A    192.168.31.90
